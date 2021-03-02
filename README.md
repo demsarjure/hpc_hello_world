@@ -215,13 +215,14 @@ So far we were running things on our login node. Like mentioned above, login nod
 #SBATCH --output=output.txt
 #SBATCH --error=error.txt
 #SBATCH --ntasks=1
-#SBATCH --time=10:00
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2gb
+#SBATCH --time=10:00
 
 singularity exec -B ~:/host_folder hpc_hello_world.sif python3 /opt/hpc_hello_world/hello_world.py -i "/host_folder/data.csv" -o "/host_folder/test.txt"
 ```
 
-You can see that SLURM parameters are specified with `#SBATCH`, with `--job-name`we determines the name of the job (this will be seen later when we will be tracking the job), next we define where SLURM will put outputs (printouts) and errors (if they occur). With the last three rows we determine that we will be running a single task (single process) for at most 10 minutes and we need 2gb of RAM for it. For a list of other possible SLURM options see [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html). After the SLURM header we specify the commands we want to run, in our case this will be the `singularity exec` command we ran before. Before we ran it on the login not, but now it will be ran on a much more powerful compute node! To schedule our job we execute:
+You can see that SLURM parameters are specified with `#SBATCH`, with `--job-name`we determines the name of the job (this will be seen later when we will be tracking the job), next we define where SLURM will put outputs (printouts) and errors (if they occur). With the last three rows we determine that we will be running a single task (single process) on a single CPU for at most 10 minutes and we need 2gb of RAM for it. For a list of other possible SLURM options see [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html). After the SLURM header we specify the commands we want to run, in our case this will be the `singularity exec` command we ran before. Before we ran it on the login not, but now it will be ran on a much more powerful compute node! To schedule our job we execute:
 
 ``` bash
 sbatch hpc_hello_world.sh
@@ -241,8 +242,9 @@ Under the `ST` column we can see the status, there `PD` means that the job is wa
 #SBATCH --output=output.txt
 #SBATCH --error=error.txt
 #SBATCH --ntasks=1
-#SBATCH --time=10:00
+#SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=2gb
+#SBATCH --time=10:00
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
 
