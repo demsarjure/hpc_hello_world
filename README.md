@@ -69,7 +69,7 @@ Our scripts reads each row and sums up all the numbers. It then prints the resul
 python3 hpc_hello_world.py -i data.csv -o test.txt
 ```
 
-This call would read the numbers inside the `data.csv` file and print them into `test.txt`.
+This call would read and summarize the numbers inside the `data.csv` file and print the result in `test.txt`.
 
 ## Getting access to a HPC system
 
