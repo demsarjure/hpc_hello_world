@@ -4,7 +4,7 @@ The purpose of this document is to introduce students from the Faculty of Comput
 
 ## Example python script
 
-In this tutorial we will try to containarize the following python script (`hpc_hello_world.py`):
+In this tutorial we will try to containerize the following python script (`hpc_hello_world.py`):
 
 ``` python
 #!/usr/bin/python
@@ -126,11 +126,11 @@ Once our dockerfile is ready and Docker is up and running on our system we can b
 docker build -f hpc_hello_world.dockerfile -t juredemsar/hpc_hello_world:1.0.0 .
 ```
 
-With `-f` we specify wich dockerfile to use and with `-t` we label and tag/version our container. The `juredemsar/hpc_hello_world` portion of the name comes from the way we named our Docker repository. On the Docker hub webpage ([https://hub.docker.com/](https://hub.docker.com/)) we have opened a new repository called `hpc_hello_world` under my username (`juredemsar`). The last argument `.` tells the command to work in the current folder. For additional options when building a Dokcer container consult [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/).
+With `-f` we specify which dockerfile to use and with `-t` we label and tag/version our container. The `juredemsar/hpc_hello_world` portion of the name comes from the way we named our Docker repository. On the Docker hub webpage ([https://hub.docker.com/](https://hub.docker.com/)) we have opened a new repository called `hpc_hello_world` under my username (`juredemsar`). The last argument `.` tells the command to work in the current folder. For additional options when building a Dokcer container consult [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/).
 
 ### Running the container
 
-Once our container is built we can try it out by using the `docker run` command:
+Once our container is built we have our whole environment (OS, libraries, dependencies, tools, etc.) packed in a single container image. This means that we can run our code in the exact same environment on every system that has Docker installed. This comes in handy, because we can easily transfer our work to new system or allow other researchers or developers to exactly reproduce our work without much hassle. We can try if it works by using the `docker run` command:
 
 ``` bash
 docker run -v "D:/Projects/hpc_hello_world:/host_folder" juredemsar/hpc_hello_world:1.0.0 python3 /opt/hpc_hello_world/hello_world.py -i "/host_folder/data.csv" -o "/host_folder/test.txt"
@@ -193,7 +193,7 @@ export SINGULARITY_DOCKER_USERNAME=<Docker username>
 singularity build --docker-login hpc_hello_world.sif docker://juredemsar/hpc_hello_world:1.0.0
 ```
 
-Now that our `hpc_hello_world.sif` is ready we can use it to run our script, with Singularity this is done similarly as with Docker:
+The result of this command will be a file called `hpc_hello_world.sif`, which will store our whole processing environment. Once the Singularity image file is ready we can use it to run our script, with Singularity this is done similarly as with Docker:
 
 ``` bash
 singularity exec -B ~:/host_folder hpc_hello_world.sif python3 /opt/hpc_hello_world/hello_world.py -i "/host_folder/data.csv" -o "/host_folder/test.txt"
