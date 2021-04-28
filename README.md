@@ -144,7 +144,7 @@ The next part of the `docker run` command is the image we will use, in our case 
 python3 /opt/hpc_hello_world/hello_world.py -i "/host_folder/data.csv" -o "/host_folder/test.txt"
 ```
 
-You can see that input and output files need to be defined from containers perspective. Container does not have direct access to `D:/Projects/hpc_hello_world`, it can access it through our binding tha we made with the `-v` parameter. For additional options regarding `docker run` see [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
+You can see that input and output files need to be defined from container's perspective. Container does not have direct access to `D:/Projects/hpc_hello_world`, it can access it through our binding tha we made with the `-v` parameter. For additional options regarding `docker run` see [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/).
 
 We can also enter the container interactively, this is useful so we can check if everything we want is inside the container:
 
