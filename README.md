@@ -207,7 +207,7 @@ singularity shell hpc_hello_world.sif
 
 ## Scheduling
 
-So far we were running things on our login node. Like mentioned above, login nodes have weak hardware and will terminate your processes if they will run too long. To run our tasks on compute nodes we need to schedule them via Simple Linux Utility for Resource Management (SLURM, [https://slurm.schedmd.com/](https://slurm.schedmd.com/)). With SLURM we traditionally create shell scripts with a special header that describes what kind of resources we need. The more resources we demand the longer we will have to wait to get them, so do not reserve resources that you do not need, because it will cost both your time and time of other users of the system. Below is an example of a shell script (`hpc_hello_world.sh`):
+So far we were running things on our login node. Like mentioned above, login nodes have weak hardware and will terminate your processes if they run too long. To run our tasks on compute nodes we need to schedule them via Simple Linux Utility for Resource Management (SLURM, [https://slurm.schedmd.com/](https://slurm.schedmd.com/)). With SLURM we traditionally create shell scripts with a special header that describes what kind of resources we need. The more resources we demand the longer we will have to wait to get them, so do not reserve resources that you do not need, because it will cost both your time and time of other users of the system. Below is an example of a shell script (`hpc_hello_world.sh`):
 
 ``` bash
 #!/bin/bash
