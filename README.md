@@ -126,7 +126,7 @@ Once our dockerfile is ready and Docker is up and running on our system we can b
 docker build -f hpc_hello_world.dockerfile -t juredemsar/hpc_hello_world:1.0.0 .
 ```
 
-With `-f` we specify which dockerfile to use and with `-t` we label and tag/version our container. The `juredemsar/hpc_hello_world` portion of the name comes from the way we named our Docker repository. On the Docker hub webpage ([https://hub.docker.com/](https://hub.docker.com/)) we have opened a new repository called `hpc_hello_world` under my username (`juredemsar`). The last argument `.` tells the command to work in the current folder. For additional options when building a Dokcer container consult [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/).
+With `-f` we specify which dockerfile to use and with `-t` we label and tag/version our container. The `juredemsar/hpc_hello_world` portion of the name comes from the way we named our Docker repository. On the Docker hub webpage ([https://hub.docker.com/](https://hub.docker.com/)) we have opened a new repository called `hpc_hello_world` under my username (`juredemsar`). The last argument `.` tells the command to work in the current folder. For additional options when building a Docker container consult [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/).
 
 ### Running the container
 
