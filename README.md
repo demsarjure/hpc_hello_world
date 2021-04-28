@@ -89,7 +89,7 @@ Once we login into a HCP system we land on a node. Here, it is important to dist
 
 You might imagine that maintenance of a HCP system would be impossible if administrators would have to tune the systems to whims of all users (everyone needs their own libraries, dependencies, versions of tools, etc.). Containers offer a solution to this problem, through containers we can encapsulate/virtualize the whole processing ecosystem (an OS, all libraries and dependencies and our code) into a single image that is then used by the HCP system for processing.
 
-In this tutorial we will use Docker ([https://www.docker.com/](https://www.docker.com/)) to prepare the container. Docker is the most widely spread containerization solution, besides the containerization Docker offers a hub which we can use to easily transfer our containers to HPC systems. The HPC system we will use actually use Singularity and not Docker because of higher security. As you will see, building a Singularity image from a Docker image is trivial.
+In this tutorial we will use Docker ([https://www.docker.com/](https://www.docker.com/)) to prepare the container. Docker is the most widely spread containerization solution, besides the containerization Docker offers a hub which we can use to easily transfer our containers to HPC systems. Our HPC system actually uses Singularity and not Docker due to higher security. As you will see, building a Singularity image from a Docker image is trivial.
 
 ### The dockerfile
 
