@@ -71,7 +71,7 @@ python3 hpc_hello_world.py -i data.csv -o test.txt
 
 This call would read and summarize the numbers inside the `data.csv` file and print the result in `test.txt`.
 
-## Getting access to a HPC system
+## Getting access to an HPC system
 
 The first thing we need is access to an HPC system. To get it you should write an email to the administrator at FRI. For the purpose of this tutorial we will assume that our username is `juredemsar` (or `demsarjure` in the case of the Git repository). The HPC system used in this example is called `Trdina`, which is one of the systems in the Slovenian national supercomputing network (SLING). The code works on any of the system though, the only thing you need to change is the address your are logging into. Once you get access credentials you can use console/terminal and `ssh` to log into the system:
 
