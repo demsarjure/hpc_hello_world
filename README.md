@@ -63,7 +63,7 @@ The scripts takes two arguments (`-i` and `-o`), the first argument (`-i`) speci
 20,30
 ```
 
-Our scripts reads each row and sums up all the numbers. It then prints the result into the file specified withe the `-o` argument. A valid run of the script would thus be:
+Our script reads each row and sums up all the numbers. It then prints the result into the file specified withe the `-o` argument. A valid run of the script would thus be:
 
 ``` bash
 python3 hpc_hello_world.py -i data.csv -o test.txt
