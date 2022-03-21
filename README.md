@@ -112,6 +112,10 @@ RUN cd /opt && \
 
 # an alternative would be to copy local code into the container
 # COPY hpc_hello_world.py /opt/hpc_hello_world/hpc_hello_world.py
+
+# probably an even more flexible alternative is to have the code
+# on the server outside of the container and bind it into the container
+# see below for details about binding folders when running containers
 ```
 
 The `FROM` command sets the starting point, here I used a clean image of the latest version of Ubuntu OS. Traditionally, we will not use `ubuntu:latest` since the docker hub contains a number of pre-prepared images that better suit our needs. For example, the `python:latest` image has python and core files needed for working with python already installed, by using this image our dockerfile would be much shorter. Such images exist for most commonly used toolsets (e.g., TensorFlow, PyTorch, etc.).
